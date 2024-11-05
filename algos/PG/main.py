@@ -29,7 +29,7 @@ def train():
         state, info = wrapped_env.reset(seed=seed)
         done = False
         while not done:
-            action = agent.get_action(state)
+            action = agent.get_action(state, training=True)
             next_state, reward, terminated, truncated, info = wrapped_env.step(action)
             agent.rewards.append(reward)
             done = terminated or truncated
@@ -63,7 +63,7 @@ def test():
     # Testing
     state, info = env.reset(seed=seed)
     for _ in range(1000):
-        action = agent.get_action(state)
+        action = agent.get_action(state, training=False)
         state, reward, terminated, truncated, info = env.step(action)
         if terminated or truncated:
             state, info = env.reset(seed=seed)

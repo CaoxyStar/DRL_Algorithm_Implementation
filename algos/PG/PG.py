@@ -31,9 +31,12 @@ class PG_Agent:
         self.net = Policy_Network(obs_space_dims, hidden_dims, action_space_dims)
         self.optimizer = torch.optim.AdamW(self.net.parameters(), lr=self.learning_rate)
 
-    def get_action(self, state) -> float:
+    def get_action(self, state, training=True) -> float:
         state = torch.tensor(np.array([state]))
         action_means, action_stddevs = self.net(state)
+
+        if not training:
+            return action_means[0].detach().numpy()
 
         # create a normal distribution from the predicted mean and standard deviation
         distrib = Normal(action_means[0] + self.eps, action_stddevs[0] + self.eps)
