@@ -49,7 +49,7 @@ class PG_Agent:
         return action.numpy()
 
     def train(self):
-        # Calculate the discounted rewards
+        # Calculate the discounted rewards (Monte Carlo)
         running_g = 0
         gs = []
         for R in self.rewards[::-1]:
@@ -61,7 +61,7 @@ class PG_Agent:
         log_probs = torch.stack(self.probs)
         loss = -torch.matmul(deltas, log_probs)
 
-        # Update the policy network
+        # Update the policy network (On-Policy)
         self.optimizer.zero_grad()
         loss.backward()
         self.optimizer.step()
