@@ -1,6 +1,6 @@
 # Actor-Critic Algo
 
-The actor-critic algorithm can be implemented by various version, such as off-policy or on-policy, TD or MC and online or offline.
+The actor-critic algorithm can be implemented by various versions, such as off-policy or on-policy, TD or MC and online or offline.
 
 For the basic actor-critic algorithm, the common way is fitting the V-function by TD(low variance) or MC(unbiased), and then compute action advantage based on V-function to train actor. However, this version is a on-policy paradigm lacking data efficiency.
 
