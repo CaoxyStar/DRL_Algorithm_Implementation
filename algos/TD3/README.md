@@ -6,4 +6,4 @@ There are three main improvements:
 
 - Use two target cirtic networks to fix the overestimate problem
 - Add noise to actions for exploration at training stage
-- Delay policy to let the update speed of actor lower than critic
+- Delay the update speed of actor

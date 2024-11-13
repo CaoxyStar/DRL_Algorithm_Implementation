@@ -1,5 +1,5 @@
 # Deep Q-Learning
 
-This is a basic deep Q-Learning implementation. We don't use double Q-Learning or variable epsilon.
+This is a basic deep Q-Learning implementation.
 
-It's worth noting that although the input of network is only state, but its outputs are different value related each action. So what the network actually fits is Q-function.
+It's worth noting that although the input of network is only state, but its outputs are different values related to each action. So what the network actually fits is Q-function.
