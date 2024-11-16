@@ -9,7 +9,7 @@ seed = 30
 
 def train():
     # Environment
-    env = gym.make("LunarLander-v2")
+    env = gym.make("LunarLander-v3")
     wrapped_env = gym.wrappers.RecordEpisodeStatistics(env, 50)
 
     # Hyperparameters
@@ -72,7 +72,7 @@ def train():
 
 def test():
     # Environment
-    env = gym.make("LunarLander-v2", render_mode="human")
+    env = gym.make("LunarLander-v3", render_mode="human")
 
     # Agent
     obs_space_dims = env.observation_space.shape[0]
