@@ -1,7 +1,6 @@
 # Model-free Deep Reinforcement Learning Algorithms Implementation
 
-Overview
---------
+### Overview
 
 This is a repository about the implementation of many model-free deep reinforcement learning algorithms.
 
@@ -13,8 +12,8 @@ This is a repository about the implementation of many model-free deep reinforcem
 - Proximal Policy Optimization ( On-Policy, Monte Carlo, Discrete Action Space )
 
 
-Usage
------
+### Usage
+
 Test :
 ``` 
 python algos/DDPG/main.py --test
